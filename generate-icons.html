@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickDrop Icon Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin: 10px;
+      display: block;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .icon-preview {
+      display: inline-block;
+      margin: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>QuickDrop Icon Generator</h1>
+  <p>Click the buttons below to generate and download icons for your extension.</p>
+  
+  <div class="icon-preview">
+    <canvas id="icon16" width="16" height="16"></canvas>
+    <br>
+    <button onclick="generateIcon(16)">Generate 16x16</button>
+    <a id="download16" download="icon16.png" style="display:none;"></a>
+  </div>
+  
+  <div class="icon-preview">
+    <canvas id="icon48" width="48" height="48"></canvas>
+    <br>
+    <button onclick="generateIcon(48)">Generate 48x48</button>
+    <a id="download48" download="icon48.png" style="display:none;"></a>
+  </div>
+  
+  <div class="icon-preview">
+    <canvas id="icon128" width="128" height="128"></canvas>
+    <br>
+    <button onclick="generateIcon(128)">Generate 128x128</button>
+    <a id="download128" download="icon128.png" style="display:none;"></a>
+  </div>
+  
+  <div style="margin-top: 20px;">
+    <button onclick="generateAll()" style="background: #764ba2; padding: 15px 30px; font-size: 16px;">Generate All Icons</button>
+  </div>
+
+  <script>
+    function generateIcon(size) {
+      const canvas = document.getElementById(`icon${size}`);
+      const ctx = canvas.getContext('2d');
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, size, size);
+      
+      // Background gradient
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#667eea');
+      gradient.addColorStop(1, '#764ba2');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+      
+      // Draw "QD" text or drag icon
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.5}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('QD', size / 2, size / 2);
+      
+      // Download
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        const link = document.getElementById(`download${size}`);
+        link.href = url;
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+    }
+    
+    function generateAll() {
+      generateIcon(16);
+      setTimeout(() => generateIcon(48), 500);
+      setTimeout(() => generateIcon(128), 1000);
+    }
+  </script>
+</body>
+</html>

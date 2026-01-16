@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickDrop Setup</title>
+  <link rel="stylesheet" href="setup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 QuickDrop Setup</h1>
+      <p>Enter your information once. Use it everywhere.</p>
+    </header>
+
+    <form id="setupForm">
+      <!-- Identity Section -->
+      <section class="form-section">
+        <h2>Identity</h2>
+        <div class="form-group">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="legalName">Legal Name (Optional)</label>
+          <input type="text" id="legalName" name="legalName">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+1 585 XXX XXXX">
+        </div>
+      </section>
+
+      <!-- Address Section -->
+      <section class="form-section">
+        <h2>Address</h2>
+        <div class="form-group">
+          <label for="addressLine1">Address Line 1 *</label>
+          <input type="text" id="addressLine1" name="addressLine1" required>
+        </div>
+        <div class="form-group">
+          <label for="city">City *</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div class="form-group">
+          <label for="state">State *</label>
+          <input type="text" id="state" name="state" required>
+        </div>
+        <div class="form-group">
+          <label for="zip">Postal Code *</label>
+          <input type="text" id="zip" name="zip" required>
+        </div>
+        <div class="form-group">
+          <label for="country">Country (Optional)</label>
+          <input type="text" id="country" name="country" value="United States">
+        </div>
+      </section>
+
+      <!-- Education Section -->
+      <section class="form-section">
+        <h2>Education</h2>
+        <div class="form-group">
+          <label for="school">School / University *</label>
+          <input type="text" id="school" name="school" required>
+        </div>
+        <div class="form-group">
+          <label for="degree">Degree *</label>
+          <input type="text" id="degree" name="degree" required placeholder="e.g., Bachelors, Masters">
+        </div>
+        <div class="form-group">
+          <label for="fieldOfStudy">Field of Study</label>
+          <input type="text" id="fieldOfStudy" name="fieldOfStudy">
+        </div>
+        <div class="form-group">
+          <label for="gpa">GPA (Optional)</label>
+          <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.8">
+        </div>
+      </section>
+
+      <!-- Work Experience Section -->
+      <section class="form-section">
+        <h2>Work Experience</h2>
+        <div id="workExperienceContainer">
+          <div class="work-entry">
+            <div class="form-group">
+              <label for="jobTitle0">Job Title *</label>
+              <input type="text" id="jobTitle0" name="jobTitle0" required>
+            </div>
+            <div class="form-group">
+              <label for="company0">Company *</label>
+              <input type="text" id="company0" name="company0" required>
+            </div>
+            <div class="form-group">
+              <label for="location0">Location</label>
+              <input type="text" id="location0" name="location0">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fromMonth0">From (Month)</label>
+                <input type="text" id="fromMonth0" name="fromMonth0" placeholder="e.g., 8">
+              </div>
+              <div class="form-group">
+                <label for="fromYear0">From (Year)</label>
+                <input type="text" id="fromYear0" name="fromYear0" placeholder="e.g., 2025">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" id="currentlyWorking0" name="currentlyWorking0">
+                I currently work here
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="roleDescription0">Role Description</label>
+              <textarea id="roleDescription0" name="roleDescription0" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+        <button type="button" id="addWorkEntry" class="btn-secondary">+ Add Work Experience</button>
+      </section>
+
+      <!-- Links Section -->
+      <section class="form-section">
+        <h2>Links</h2>
+        <div class="form-group">
+          <label for="linkedin">LinkedIn URL</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+        <div class="form-group">
+          <label for="github">GitHub URL</label>
+          <input type="url" id="github" name="github" placeholder="https://github.com/...">
+        </div>
+        <div class="form-group">
+          <label for="portfolio">Portfolio URL</label>
+          <input type="url" id="portfolio" name="portfolio" placeholder="https://...">
+        </div>
+        <div class="form-group">
+          <label for="resume">Resume Link (Google Drive / PDF)</label>
+          <input type="url" id="resume" name="resume" placeholder="https://...">
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Save & Start Using QuickDrop</button>
+      </div>
+    </form>
+  </div>
+  <script src="setup.js"></script>
+</body>
+</html>

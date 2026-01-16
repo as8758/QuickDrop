@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickDrop</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header>
+      <h1>🚀 QuickDrop</h1>
+      <button id="editBtn" class="btn-icon" title="Edit Profile">✏️</button>
+    </header>
+
+    <div id="setupPrompt" class="setup-prompt" style="display: none;">
+      <p>👋 Welcome to QuickDrop!</p>
+      <p>Let's set up your profile first.</p>
+      <button id="setupBtn" class="btn-primary">Start Setup</button>
+    </div>
+
+    <div id="dataContainer" class="data-container">
+      <!-- Data blocks will be inserted here -->
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

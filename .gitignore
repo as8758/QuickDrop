@@ -1,0 +1,16 @@
+# Chrome Extension
+*.crx
+*.pem
+
+# Icons (optional - uncomment if you don't want to commit icons)
+# icons/*.png
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
