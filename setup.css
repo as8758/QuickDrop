@@ -100,7 +100,9 @@ input[type="checkbox"] {
   margin-right: 8px;
 }
 
-.work-entry {
+.work-entry,
+.education-entry,
+.other-entry {
   background: #f9f9f9;
   padding: 20px;
   border-radius: 8px;

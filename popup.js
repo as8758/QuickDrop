@@ -46,18 +46,18 @@ function createDataBlock(label, value, dataKey) {
     e.dataTransfer.setData('text/plain', block.dataset.value);
     e.dataTransfer.effectAllowed = 'copy';
     block.classList.add('dragging');
-    // Prevent popup from closing by keeping focus
-    e.dataTransfer.setData('application/x-keep-open', 'true');
+    // Prevent side panel from closing during drag
+    e.stopPropagation();
   });
   
   block.addEventListener('dragend', (e) => {
     block.classList.remove('dragging');
-    // Try to keep popup open by focusing back
-    setTimeout(() => {
-      if (document.hasFocus) {
-        window.focus();
-      }
-    }, 100);
+    // Ensure side panel stays open after drag
+    e.stopPropagation();
+    // Keep focus on side panel to prevent it from closing
+    if (window.focus) {
+      window.focus();
+    }
   });
   
   // Click to paste into focused field
@@ -161,27 +161,29 @@ function renderProfile(profile) {
   }
   
   // Education section
-  if (profile.education) {
+  if (profile.education && profile.education.length > 0) {
     const section = document.createElement('div');
     section.className = 'section';
     section.innerHTML = '<div class="section-title">Education</div>';
     
-    if (profile.education.school) {
-      const block = createDataBlock('University', profile.education.school, 'school');
-      if (block) section.appendChild(block);
-    }
-    if (profile.education.degree) {
-      const block = createDataBlock('Degree', profile.education.degree, 'degree');
-      if (block) section.appendChild(block);
-    }
-    if (profile.education.fieldOfStudy) {
-      const block = createDataBlock('Field of Study', profile.education.fieldOfStudy, 'fieldOfStudy');
-      if (block) section.appendChild(block);
-    }
-    if (profile.education.gpa) {
-      const block = createDataBlock('GPA', profile.education.gpa, 'gpa');
-      if (block) section.appendChild(block);
-    }
+    profile.education.forEach((edu, index) => {
+      if (edu.school) {
+        const block = createDataBlock(`University ${index + 1}`, edu.school, `school${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (edu.degree) {
+        const block = createDataBlock(`Degree ${index + 1}`, edu.degree, `degree${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (edu.fieldOfStudy) {
+        const block = createDataBlock(`Field of Study ${index + 1}`, edu.fieldOfStudy, `fieldOfStudy${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (edu.gpa) {
+        const block = createDataBlock(`GPA ${index + 1}`, edu.gpa, `gpa${index}`);
+        if (block) section.appendChild(block);
+      }
+    });
     
     container.appendChild(section);
   }
@@ -199,6 +201,26 @@ function renderProfile(profile) {
       }
       if (work.company) {
         const block = createDataBlock(`Company ${index + 1}`, work.company, `company${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (work.location) {
+        const block = createDataBlock(`Location ${index + 1}`, work.location, `location${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (work.fromMonth && work.fromYear) {
+        let dateRange = `${work.fromMonth} ${work.fromYear}`;
+        if (work.currentlyWorking) {
+          dateRange += ' - Present';
+        } else if (work.toMonth && work.toYear) {
+          dateRange += ` - ${work.toMonth} ${work.toYear}`;
+        } else if (work.toYear) {
+          dateRange += ` - ${work.toYear}`;
+        }
+        const block = createDataBlock(`Date Range ${index + 1}`, dateRange, `dateRange${index}`);
+        if (block) section.appendChild(block);
+      }
+      if (work.roleDescription) {
+        const block = createDataBlock(`Role Description ${index + 1}`, work.roleDescription, `roleDescription${index}`);
         if (block) section.appendChild(block);
       }
     });
@@ -228,6 +250,22 @@ function renderProfile(profile) {
       const block = createDataBlock('Resume', profile.links.resume, 'resume');
       if (block) section.appendChild(block);
     }
+    
+    container.appendChild(section);
+  }
+  
+  // Other section
+  if (profile.other && profile.other.length > 0) {
+    const section = document.createElement('div');
+    section.className = 'section';
+    section.innerHTML = '<div class="section-title">Other</div>';
+    
+    profile.other.forEach((field) => {
+      if (field.label && field.value) {
+        const block = createDataBlock(field.label, field.value, `other_${field.label}`);
+        if (block) section.appendChild(block);
+      }
+    });
     
     container.appendChild(section);
   }

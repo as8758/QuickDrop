@@ -1,4 +1,4 @@
-# 🚀 QuickDrop
+# QuickDrop
 
 **Drag-and-drop form filler. Fill forms faster with your saved information.**
 

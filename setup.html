@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>🚀 QuickDrop Setup</h1>
+      <h1>QuickDrop Setup</h1>
       <p>Enter your information once. Use it everywhere.</p>
     </header>
 
@@ -67,22 +67,27 @@
       <!-- Education Section -->
       <section class="form-section">
         <h2>Education</h2>
-        <div class="form-group">
-          <label for="school">School / University *</label>
-          <input type="text" id="school" name="school" required>
+        <div id="educationContainer">
+          <div class="education-entry">
+            <div class="form-group">
+              <label for="school0">School / University *</label>
+              <input type="text" id="school0" name="school0" required>
+            </div>
+            <div class="form-group">
+              <label for="degree0">Degree *</label>
+              <input type="text" id="degree0" name="degree0" required placeholder="e.g., Bachelors, Masters">
+            </div>
+            <div class="form-group">
+              <label for="fieldOfStudy0">Field of Study</label>
+              <input type="text" id="fieldOfStudy0" name="fieldOfStudy0">
+            </div>
+            <div class="form-group">
+              <label for="gpa0">GPA (Optional)</label>
+              <input type="text" id="gpa0" name="gpa0" placeholder="e.g., 3.8">
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="degree">Degree *</label>
-          <input type="text" id="degree" name="degree" required placeholder="e.g., Bachelors, Masters">
-        </div>
-        <div class="form-group">
-          <label for="fieldOfStudy">Field of Study</label>
-          <input type="text" id="fieldOfStudy" name="fieldOfStudy">
-        </div>
-        <div class="form-group">
-          <label for="gpa">GPA (Optional)</label>
-          <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.8">
-        </div>
+        <button type="button" id="addEducationEntry" class="btn-secondary">+ Add Education</button>
       </section>
 
       <!-- Work Experience Section -->
@@ -105,11 +110,21 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="fromMonth0">From (Month)</label>
-                <input type="text" id="fromMonth0" name="fromMonth0" placeholder="e.g., 8">
+                <input type="text" id="fromMonth0" name="fromMonth0" placeholder="e.g., Aug 2025">
               </div>
               <div class="form-group">
                 <label for="fromYear0">From (Year)</label>
                 <input type="text" id="fromYear0" name="fromYear0" placeholder="e.g., 2025">
+              </div>
+            </div>
+            <div class="form-row" id="toDateRow0" style="display: none;">
+              <div class="form-group">
+                <label for="toMonth0">To (Month)</label>
+                <input type="text" id="toMonth0" name="toMonth0" placeholder="e.g., Dec 2025">
+              </div>
+              <div class="form-group">
+                <label for="toYear0">To (Year)</label>
+                <input type="text" id="toYear0" name="toYear0" placeholder="e.g., 2025">
               </div>
             </div>
             <div class="form-group">
@@ -146,6 +161,15 @@
           <label for="resume">Resume Link (Google Drive / PDF)</label>
           <input type="url" id="resume" name="resume" placeholder="https://...">
         </div>
+      </section>
+
+      <!-- Other Section -->
+      <section class="form-section">
+        <h2>Other</h2>
+        <div id="otherContainer">
+          <!-- Custom fields will be added here -->
+        </div>
+        <button type="button" id="addOtherField" class="btn-secondary">+ Add Custom Field</button>
       </section>
 
       <div class="form-actions">
