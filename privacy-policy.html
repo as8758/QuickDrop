@@ -6,88 +6,165 @@
   <title>QuickDrop Privacy Policy</title>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
       line-height: 1.6;
       color: #333;
+      background: #f8f9fa;
     }
-    h1 { color: #667eea; }
-    h2 { color: #764ba2; margin-top: 30px; }
-    .last-updated { color: #666; font-style: italic; }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { 
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+    h2 { 
+      color: #764ba2;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    .last-updated { 
+      color: #666;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 8px 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    strong {
+      color: #333;
+    }
+    p {
+      margin: 12px 0;
+    }
   </style>
 </head>
 <body>
-  <h1>QuickDrop Privacy Policy</h1>
-  <p class="last-updated">Last Updated: January 16, 2026</p>
+  <div class="container">
+    <h1>QuickDrop Privacy Policy</h1>
+    <p class="last-updated">Last Updated: January 16, 2026</p>
 
-  <h2>Overview</h2>
-  <p>QuickDrop is a browser extension that helps you fill online forms faster by storing your information locally in your browser. We are committed to protecting your privacy.</p>
+    <h2>Overview</h2>
+    <p>QuickDrop is a browser extension that helps you fill online forms faster by storing your information locally in your browser. We are committed to protecting your privacy and ensuring your data remains secure and private.</p>
 
-  <h2>Data Collection</h2>
-  <p>QuickDrop collects and stores the following information that you voluntarily provide:</p>
-  <ul>
-    <li>Personal identity information (name, email, phone number)</li>
-    <li>Address information</li>
-    <li>Education history</li>
-    <li>Work experience</li>
-    <li>Professional links (LinkedIn, GitHub, portfolio)</li>
-    <li>Any custom fields you choose to add</li>
-  </ul>
+    <h2>Data Collection</h2>
+    <p>QuickDrop collects and stores only the information that you voluntarily provide through the setup form:</p>
+    <ul>
+      <li>Personal identity information (first name, last name, legal name, email address, phone number)</li>
+      <li>Address information (street address, city, state, postal code, country)</li>
+      <li>Education history (schools, degrees, fields of study, GPA)</li>
+      <li>Work experience (job titles, companies, locations, dates, role descriptions)</li>
+      <li>Professional links (LinkedIn, GitHub, portfolio, resume URLs)</li>
+      <li>Any custom fields you choose to add</li>
+    </ul>
 
-  <h2>Data Storage</h2>
-  <p><strong>All data is stored locally on your device</strong> using Chrome's storage API (<code>chrome.storage.local</code>). Your information:</p>
-  <ul>
-    <li>Never leaves your browser</li>
-    <li>Is not transmitted to any external servers</li>
-    <li>Is not shared with third parties</li>
-    <li>Remains under your complete control</li>
-  </ul>
+    <h2>Data Storage</h2>
+    <p><strong>All data is stored locally on your device</strong> using Chrome's local storage API (<code>chrome.storage.local</code>). Your information:</p>
+    <ul>
+      <li><strong>Never leaves your browser</strong></li>
+      <li>Is not transmitted to any external servers or cloud services</li>
+      <li>Is not shared, sold, or transferred to any third parties</li>
+      <li>Is not accessible to the extension developers</li>
+      <li>Remains under your complete control at all times</li>
+    </ul>
 
-  <h2>Data Usage</h2>
-  <p>The information you provide is used solely to:</p>
-  <ul>
-    <li>Populate form fields when you drag and drop or click to paste</li>
-    <li>Display your saved information in the extension interface</li>
-    <li>Provide right-click context menu options for quick insertion</li>
-  </ul>
+    <h2>Data Usage</h2>
+    <p>The information you provide is used exclusively for the following purposes:</p>
+    <ul>
+      <li>Displaying your saved information in the extension's side panel interface</li>
+      <li>Populating form fields when you drag and drop data blocks</li>
+      <li>Inserting data when you click to paste into focused form fields</li>
+      <li>Providing right-click context menu options for quick field insertion</li>
+    </ul>
+    <p><strong>No other use of your data occurs.</strong> QuickDrop does not analyze, process, or utilize your data for any purpose beyond the core form-filling functionality.</p>
 
-  <h2>Data Security</h2>
-  <p>Since all data is stored locally in your browser, it is protected by your browser's security mechanisms. We do not have access to your data at any time.</p>
+    <h2>Data Security</h2>
+    <p>Since all data is stored locally within your browser's secure storage system, it is protected by:</p>
+    <ul>
+      <li>Your browser's built-in security mechanisms</li>
+      <li>Your device's security settings and authentication</li>
+      <li>Chrome's extension sandboxing and isolation features</li>
+    </ul>
+    <p>QuickDrop developers never have access to your data at any time, as it never leaves your device.</p>
 
-  <h2>Third-Party Access</h2>
-  <p>QuickDrop does not:</p>
-  <ul>
-    <li>Collect analytics or usage data</li>
-    <li>Use tracking cookies</li>
-    <li>Share data with third parties</li>
-    <li>Sell user information</li>
-    <li>Transmit data over the internet</li>
-  </ul>
+    <h2>Third-Party Access</h2>
+    <p>QuickDrop does not and will not:</p>
+    <ul>
+      <li>Collect analytics, telemetry, or usage statistics</li>
+      <li>Use tracking cookies or any tracking mechanisms</li>
+      <li>Share, sell, or transfer data to third parties</li>
+      <li>Integrate with external services or APIs</li>
+      <li>Transmit any data over the internet</li>
+      <li>Include advertisements or third-party scripts</li>
+    </ul>
 
-  <h2>Data Deletion</h2>
-  <p>You can delete your data at any time by:</p>
-  <ul>
-    <li>Uninstalling the extension (removes all stored data)</li>
-    <li>Clearing your browser's extension data</li>
-    <li>Editing your profile through the setup page</li>
-  </ul>
+    <h2>Data Retention and Deletion</h2>
+    <p>Your data is retained locally in your browser until you choose to delete it. You can delete your data at any time by:</p>
+    <ul>
+      <li>Uninstalling the QuickDrop extension (this removes all stored data)</li>
+      <li>Clearing your browser's extension data through Chrome settings</li>
+      <li>Editing or removing specific fields through the extension's setup page</li>
+    </ul>
+    <p>Once deleted, your data cannot be recovered, as no backups are stored anywhere.</p>
 
-  <h2>Permissions Explained</h2>
-  <ul>
-    <li><strong>storage</strong>: Store your form data locally in your browser</li>
-    <li><strong>activeTab</strong>: Insert data into form fields on the current webpage</li>
-    <li><strong>contextMenus</strong>: Provide right-click insertion options</li>
-    <li><strong>scripting</strong>: Enable drag-and-drop functionality</li>
-    <li><strong>sidePanel</strong>: Display the extension interface</li>
-    <li><strong>host permissions</strong>: Work on all websites you visit</li>
-  </ul>
+    <h2>Permissions Explained</h2>
+    <p>QuickDrop requests the following permissions to function properly:</p>
+    <ul>
+      <li><strong>storage</strong>: Required to save your form data locally in your browser's secure storage</li>
+      <li><strong>activeTab</strong>: Allows the extension to insert data into form fields on the webpage you're currently viewing</li>
+      <li><strong>contextMenus</strong>: Enables right-click menu options for quick data insertion</li>
+      <li><strong>scripting</strong>: Necessary to inject content scripts that handle drag-and-drop functionality and form field population</li>
+      <li><strong>sidePanel</strong>: Used to display the extension's interface in the browser's side panel</li>
+      <li><strong>host permissions (&lt;all_urls&gt;)</strong>: Allows the extension to work on any website where you need to fill forms</li>
+    </ul>
+    <p>These permissions are used solely for the extension's core functionality and not for data collection or tracking.</p>
 
-  <h2>Changes to This Policy</h2>
-  <p>We may update this privacy policy occasionally. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+    <h2>Children's Privacy</h2>
+    <p>QuickDrop does not knowingly collect or store information from children under the age of 13. The extension is designed for general use and does not target children. If you are under 13, please do not use this extension without parental supervision.</p>
 
-  <h2>Contact</h2>
-  <p>If you have questions about this privacy policy, please contact us through the Chrome Web Store listing.</p>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time to reflect changes in functionality or legal requirements. Any changes will be posted on this page with an updated "Last Updated" date. Continued use of the extension after changes are posted constitutes acceptance of the updated policy.</p>
+
+    <h2>Open Source</h2>
+    <p>QuickDrop's source code is available for review, ensuring transparency in how the extension handles your data. You can verify that no data leaves your device by examining the code.</p>
+
+    <h2>Contact Information</h2>
+    <p>If you have any questions, concerns, or requests regarding this privacy policy or the QuickDrop extension, please contact us through the Chrome Web Store listing page or by opening an issue on our GitHub repository.</p>
+
+    <h2>Your Rights</h2>
+    <p>As all data is stored locally on your device, you have complete control over your information. You have the right to:</p>
+    <ul>
+      <li>Access your data at any time through the extension interface</li>
+      <li>Modify or update your information through the setup page</li>
+      <li>Delete all or specific pieces of information</li>
+      <li>Export your data (by manually copying it from the extension)</li>
+      <li>Uninstall the extension and remove all associated data</li>
+    </ul>
+
+    <h2>Compliance</h2>
+    <p>This privacy policy complies with:</p>
+    <ul>
+      <li>Chrome Web Store Developer Program Policies</li>
+      <li>General Data Protection Regulation (GDPR) principles</li>
+      <li>California Consumer Privacy Act (CCPA) requirements</li>
+    </ul>
+    <p>Since no data is collected, processed, or transmitted by QuickDrop, traditional data protection obligations do not apply in the conventional sense. Your data privacy is protected by design.</p>
+  </div>
 </body>
 </html>
